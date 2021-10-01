@@ -44,13 +44,11 @@ namespace UserMaintenance
             if (sfd.ShowDialog() != DialogResult.OK)
                 return;
             using (var sw = new StreamWriter(sfd.FileName, false, Encoding.UTF8))
-            {
                 foreach (var u in users)
                     sw.WriteLine(string.Format(
-                        "(0);(1)",
+                        "{0};{1}",
                         u.ID,
                         u.FullName)); 
-            }
         }
     }
 }
