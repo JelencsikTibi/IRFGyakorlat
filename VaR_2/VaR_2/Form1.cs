@@ -14,7 +14,6 @@ namespace VaR_2
 {
     public partial class Form1 : Form
     {
-        string test;
         PortfolioEntities context = new PortfolioEntities();
         List<Tick> Ticks;
         List<PortfolioItem> Portfolio = new List<PortfolioItem>();
