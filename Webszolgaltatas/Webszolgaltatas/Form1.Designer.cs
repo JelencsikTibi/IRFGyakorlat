@@ -34,6 +34,12 @@ namespace Webszolgaltatas
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.chartRateData = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tolDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.igDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.valutaComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartRateData)).BeginInit();
             this.SuspendLayout();
@@ -43,9 +49,9 @@ namespace Webszolgaltatas
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 33);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 53);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(324, 405);
+            this.dataGridView1.Size = new System.Drawing.Size(324, 385);
             this.dataGridView1.TabIndex = 0;
             // 
             // chartRateData
@@ -57,21 +63,85 @@ namespace Webszolgaltatas
             this.chartRateData.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartRateData.Legends.Add(legend1);
-            this.chartRateData.Location = new System.Drawing.Point(343, 33);
+            this.chartRateData.Location = new System.Drawing.Point(343, 53);
             this.chartRateData.Name = "chartRateData";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chartRateData.Series.Add(series1);
-            this.chartRateData.Size = new System.Drawing.Size(445, 405);
+            this.chartRateData.Size = new System.Drawing.Size(445, 385);
             this.chartRateData.TabIndex = 1;
             this.chartRateData.Text = "chart1";
+            // 
+            // tolDatePicker
+            // 
+            this.tolDatePicker.Location = new System.Drawing.Point(13, 27);
+            this.tolDatePicker.Name = "tolDatePicker";
+            this.tolDatePicker.Size = new System.Drawing.Size(200, 20);
+            this.tolDatePicker.TabIndex = 2;
+            this.tolDatePicker.Value = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
+            this.tolDatePicker.ValueChanged += new System.EventHandler(this.FilterChanged);
+            // 
+            // igDatePicker
+            // 
+            this.igDatePicker.Location = new System.Drawing.Point(219, 27);
+            this.igDatePicker.Name = "igDatePicker";
+            this.igDatePicker.Size = new System.Drawing.Size(200, 20);
+            this.igDatePicker.TabIndex = 3;
+            this.igDatePicker.Value = new System.DateTime(2020, 6, 30, 0, 0, 0, 0);
+            this.igDatePicker.ValueChanged += new System.EventHandler(this.FilterChanged);
+            // 
+            // valutaComboBox
+            // 
+            this.valutaComboBox.FormattingEnabled = true;
+            this.valutaComboBox.Items.AddRange(new object[] {
+            "EUR",
+            "HUF"});
+            this.valutaComboBox.Location = new System.Drawing.Point(425, 26);
+            this.valutaComboBox.Name = "valutaComboBox";
+            this.valutaComboBox.Size = new System.Drawing.Size(121, 21);
+            this.valutaComboBox.TabIndex = 4;
+            this.valutaComboBox.Text = "EUR";
+            this.valutaComboBox.SelectedIndexChanged += new System.EventHandler(this.FilterChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Kezdődátum";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(216, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Záródátum";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(422, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Valuta";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.valutaComboBox);
+            this.Controls.Add(this.igDatePicker);
+            this.Controls.Add(this.tolDatePicker);
             this.Controls.Add(this.chartRateData);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
@@ -79,6 +149,7 @@ namespace Webszolgaltatas
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartRateData)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -86,6 +157,12 @@ namespace Webszolgaltatas
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartRateData;
+        private System.Windows.Forms.DateTimePicker tolDatePicker;
+        private System.Windows.Forms.DateTimePicker igDatePicker;
+        private System.Windows.Forms.ComboBox valutaComboBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 
