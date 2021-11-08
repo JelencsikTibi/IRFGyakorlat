@@ -79,7 +79,22 @@ namespace Karacsony
 
         private void ballButton_Click(object sender, EventArgs e)
         {
-            Factory = new BallFactory();
+            Factory = new BallFactory
+            {
+                BallColor = ballColorButton.BackColor
+            };
+        }
+
+        private void ballColorButton_Click(object sender, EventArgs e)
+        {
+            
+            var button = (Button)sender;
+            var colorPicker = new ColorDialog();
+
+            colorPicker.Color = button.BackColor;
+            if (colorPicker.ShowDialog() != DialogResult.OK)
+                return;
+            button.BackColor = colorPicker.Color;
         }
     }
 }
