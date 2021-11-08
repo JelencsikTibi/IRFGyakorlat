@@ -37,6 +37,9 @@ namespace Karacsony
             this.ballButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.ballColorButton = new System.Windows.Forms.Button();
+            this.presentButton = new System.Windows.Forms.Button();
+            this.ribbonColorButton = new System.Windows.Forms.Button();
+            this.boxColorButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -99,11 +102,44 @@ namespace Karacsony
             this.ballColorButton.UseVisualStyleBackColor = false;
             this.ballColorButton.Click += new System.EventHandler(this.ballColorButton_Click);
             // 
+            // presentButton
+            // 
+            this.presentButton.Location = new System.Drawing.Point(175, 13);
+            this.presentButton.Name = "presentButton";
+            this.presentButton.Size = new System.Drawing.Size(75, 49);
+            this.presentButton.TabIndex = 5;
+            this.presentButton.Text = "PRESENT";
+            this.presentButton.UseVisualStyleBackColor = true;
+            this.presentButton.Click += new System.EventHandler(this.presentButton_Click);
+            // 
+            // ribbonColorButton
+            // 
+            this.ribbonColorButton.BackColor = System.Drawing.Color.Yellow;
+            this.ribbonColorButton.Location = new System.Drawing.Point(175, 69);
+            this.ribbonColorButton.Name = "ribbonColorButton";
+            this.ribbonColorButton.Size = new System.Drawing.Size(75, 23);
+            this.ribbonColorButton.TabIndex = 6;
+            this.ribbonColorButton.UseVisualStyleBackColor = false;
+            this.ribbonColorButton.Click += new System.EventHandler(this.ballColorButton_Click);
+            // 
+            // boxColorButton
+            // 
+            this.boxColorButton.BackColor = System.Drawing.Color.DarkGreen;
+            this.boxColorButton.Location = new System.Drawing.Point(175, 98);
+            this.boxColorButton.Name = "boxColorButton";
+            this.boxColorButton.Size = new System.Drawing.Size(75, 23);
+            this.boxColorButton.TabIndex = 7;
+            this.boxColorButton.UseVisualStyleBackColor = false;
+            this.boxColorButton.Click += new System.EventHandler(this.ballColorButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.boxColorButton);
+            this.Controls.Add(this.ribbonColorButton);
+            this.Controls.Add(this.presentButton);
             this.Controls.Add(this.ballColorButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ballButton);
@@ -125,6 +161,9 @@ namespace Karacsony
         private System.Windows.Forms.Button ballButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ballColorButton;
+        private System.Windows.Forms.Button presentButton;
+        private System.Windows.Forms.Button ribbonColorButton;
+        private System.Windows.Forms.Button boxColorButton;
     }
 }
 
