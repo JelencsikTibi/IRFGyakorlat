@@ -90,6 +90,7 @@ namespace UnitTestExample.Test
             try
             {
                 accountController.Register(email, password);
+                Assert.Fail();
             }
             catch (Exception ex)
             {
