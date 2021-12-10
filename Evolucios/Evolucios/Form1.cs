@@ -27,11 +27,23 @@ namespace Evolucios
             ga = gc.ActivateDisplay();
             this.Controls.Add(ga);
 
+            gc.GameOver += Gc_GameOver;
+
             for (int i = 0; i < populationSize; i++)
             {
                 gc.AddPlayer(nbrOfSteps);
             }
             gc.Start();
+        }
+
+        private void Gc_GameOver(object sender)
+        {
+            generation++;
+            label1stgeneration.Text = string.Format("{0}. generáció", generation);
+            var playerList = from p in gc.GetCurrentPlayers()
+                             orderby p.GetFitness() descending
+                             select p;
+            var topPerformers = playerList.Take(populationSize / 2).ToList();
         }
     }
 }
