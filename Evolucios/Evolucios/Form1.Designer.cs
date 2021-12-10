@@ -29,24 +29,24 @@ namespace Evolucios
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1stgeneration = new System.Windows.Forms.Label();
+            this.labelGeneration = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1stgeneration
             // 
-            this.label1stgeneration.AutoSize = true;
-            this.label1stgeneration.Location = new System.Drawing.Point(13, 13);
-            this.label1stgeneration.Name = "label1stgeneration";
-            this.label1stgeneration.Size = new System.Drawing.Size(66, 13);
-            this.label1stgeneration.TabIndex = 0;
-            this.label1stgeneration.Text = "1. generáció";
+            this.labelGeneration.AutoSize = true;
+            this.labelGeneration.Location = new System.Drawing.Point(13, 13);
+            this.labelGeneration.Name = "label1stgeneration";
+            this.labelGeneration.Size = new System.Drawing.Size(66, 13);
+            this.labelGeneration.TabIndex = 0;
+            this.labelGeneration.Text = "1. generáció";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1stgeneration);
+            this.Controls.Add(this.labelGeneration);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -56,7 +56,7 @@ namespace Evolucios
 
         #endregion
 
-        private System.Windows.Forms.Label label1stgeneration;
+        private System.Windows.Forms.Label labelGeneration;
     }
 }
 
